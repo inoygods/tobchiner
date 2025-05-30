@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Анкеты</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('assets/bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .header-image {
+      width: 100%;
+      height: auto;
+    }
+    .city-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .city-buttons button {
+      background-color: #222;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .city-buttons button.active,
+    .city-buttons button:hover {
+      background-color: #ff69b4;
+      color: #000;
+    }
+    .profile-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .profile-card {
+      background-color: rgba(0,0,0,0.7);
+      padding: 10px;
+      border-radius: 8px;
+      width: 180px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .profile-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .contact-btn {
+      background-color: #ff69b4;
+      border: none;
+      padding: 10px 20px;
+      color: #000;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/header.jpg" class="header-image" alt="Header" />
+  <nav class="city-buttons">
+    <button data-city="all" class="active">Все</button>
+    <button data-city="donetsk">Донецк</button>
+    <button data-city="lugansk">Луганск</button>
+    <button data-city="gorlovka">Горловка</button>
+    <button data-city="mariupol">Мариуполь</button>
+  </nav>
+  <main class="profile-list">
+    <div class="profile-card" data-city="donetsk" data-name="Алина, 22" data-img="assets/alina.jpg">
+      <img src="assets/alina.jpg" alt="Алина" />
+      <p>Алина, 22</p>
+      <p>Город: Донецк</p>
+    </div>
+    <div class="profile-card" data-city="lugansk" data-name="Ольга, 24" data-img="assets/olga.jpg">
+      <img src="assets/olga.jpg" alt="Ольга" />
+      <p>Ольга, 24</p>
+      <p>Город: Луганск</p>
+    </div>
+    <div class="profile-card" data-city="gorlovka" data-name="Маша, 21" data-img="assets/masha.jpg">
+      <img src="assets/masha.jpg" alt="Маша" />
+      <p>Маша, 21</p>
+      <p>Город: Горловка</p>
+    </div>
+    <div class="profile-card" data-city="mariupol" data-name="Ира, 23" data-img="assets/ira.jpg">
+      <img src="assets/ira.jpg" alt="Ира" />
+      <p>Ира, 23</p>
+      <p>Город: Мариуполь</p>
+    </div>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="close-btn" onclick="document.getElementById('modal').style.display='none'">&times;</div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script>
+    const cityButtons = document.querySelectorAll('.city-buttons button');
+    const profiles = document.querySelectorAll('.profile-card');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+
+    cityButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const city = button.dataset.city;
+        profiles.forEach(profile => {
+          profile.style.display = city === 'all' || profile.dataset.city === city ? '' : 'none';
+        });
+        cityButtons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+
+    profiles.forEach(profile => {
+      profile.addEventListener('click', () => {
+        modalContent.innerHTML = `
+          <img src="${profile.dataset.img}" />
+          <h2>${profile.dataset.name}</h2>
+          <button class="contact-btn">СВЯЗЬ</button>
+        `;
+        modal.style.display = 'flex';
+      });
+    });
+  </script>
+</body>
+</html>
