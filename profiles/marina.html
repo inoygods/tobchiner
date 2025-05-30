@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Марина</title>
   <link rel="stylesheet" href="../style.css" />
+  <script>
+    function filterProfiles(city) {
+      window.location.href = `../index.html#${city}`;
+      location.reload();
+    }
+  </script>
 </head>
 <body>
   <header class="main-header">
@@ -12,22 +18,26 @@
       <a href="../index.html"><img src="../assets/logo.png" class="logo" alt="Логотип" /></a>
       <span class="site-title">Марина, 25</span>
     </div>
+    <nav class="city-buttons">
+      <button onclick="filterProfiles('all')">Все</button>
+      <button onclick="filterProfiles('donetsk')">Донецк</button>
+      <button onclick="filterProfiles('lugansk')">Луганск</button>
+      <button onclick="filterProfiles('gorlovka')">Горловка</button>
+      <button onclick="filterProfiles('mariupol')">Мариуполь</button>
+    </nav>
   </header>
-  <main class="profile-list">
-    <div class="profile-card">
-      <img src="../assets/marina.jpg" alt="Марина" />
-      <p>Город: Луганск</p>
-      <p>Telegram: @marina</p>
-      <p>Город: Луганск</p>
-      <p>Telegram: @marina</p>      
-      <p>Город: Луганск</p>
-      <p>Telegram: @marina</p>      
-      <p>Город: Луганск</p>
-      <p>Telegram: @marina</p>
-      <p>Город: Луганск</p>
-      <p>Telegram: @marina</p>
+
+  <main class="profile-detail">
+    <div class="profile-left">
+      <a href="../index.html" class="back-button-small">← Назад</a>
+      <img src="../assets/marina.jpg" alt="Марина" class="profile-large-img"/>
     </div>
-    <a href="../index.html" class="back-button">← Назад</a>
+    <div class="profile-info">
+      <h2>Марина, 25</h2>
+      <p><strong>Город:</strong> Луганск</p>
+      <p><strong>Telegram:</strong> @marina</p>
+      <p class="profile-description">Это пример описания анкеты. Здесь можно рассказать больше о девушке: хобби, характер, пожелания к знакомству и т.д.</p>
+    </div>
   </main>
 </body>
 </html>
