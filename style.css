@@ -7,34 +7,44 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+.main-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 10px 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .logo {
-  width: 80px;
+  width: 50px;
   height: auto;
-  margin-bottom: 10px;
+}
+
+.site-title {
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 .city-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  justify-content: start;
+  gap: 10px;
 }
 
 .city-buttons button {
   background-color: #ff69b4;
   color: #fff;
   border: none;
-  margin: 5px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   cursor: pointer;
   border-radius: 0;
+  font-weight: bold;
 }
 
 .profile-list {
@@ -59,4 +69,14 @@ header {
   width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
