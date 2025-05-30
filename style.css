@@ -1,0 +1,62 @@
+
+body {
+  margin: 0;
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.city-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.city-buttons button {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.profile-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile-card {
+  background: rgba(26, 26, 26, 0.9);
+  border: 1px solid #333;
+  margin: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.profile-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
