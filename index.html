@@ -1,54 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Анкеты</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIP анкеты</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-900">
 
-<div class="sidebar" id="sidebar">
-  <a href="#">Чат 1</a>
-  <a href="#">Канал 2</a>
-  <a href="#">Канал 3</a>
-</div>
+  <header class="bg-white shadow p-4 text-center text-2xl font-bold">
+    VIP Анкеты
+  </header>
 
-<header>
-  <div class="menu-button" onclick="toggleSidebar()">☰</div>
-  <div class="city-tabs" id="cityTabs">
-    <div class="city-tab active" onclick="filterProfiles('all')">Все</div>
-    <div class="city-tab" onclick="filterProfiles('Moscow')">Moscow</div>
-    <div class="city-tab" onclick="filterProfiles('Paris')">Paris</div>
-    <div class="city-tab" onclick="filterProfiles('Berlin')">Berlin</div>
-  </div>
-</header>
-
-<div class="profiles" id="profileList">
-  <div class="profile-card" data-city="Moscow" onclick="openProfile('Jane Doe', 'Москва, описание анкеты.', 'assets/jane.jpg')">
-    <img src="assets/jane.jpg" alt="Jane">
-    <div>
-      <strong>Jane Doe</strong>
-      <p style="margin: 0; color: #aaa;">Описание...</p>
+  <main class="p-4">
+    <h2 class="text-xl mb-2">Выберите город:</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="city.html" class="bg-pink-500 text-white rounded-xl p-4 text-center hover:bg-pink-600">Донецк</a>
+      <a href="city.html" class="bg-pink-500 text-white rounded-xl p-4 text-center hover:bg-pink-600">Луганск</a>
+      <a href="city.html" class="bg-pink-500 text-white rounded-xl p-4 text-center hover:bg-pink-600">Горловка</a>
+      <a href="city.html" class="bg-pink-500 text-white rounded-xl p-4 text-center hover:bg-pink-600">Мариуполь</a>
     </div>
-  </div>
+  </main>
 
-  <div class="profile-card" data-city="Paris" onclick="openProfile('John Smith', 'Париж, описание анкеты.', 'assets/john.jpg')">
-    <img src="assets/john.jpg" alt="John">
-    <div>
-      <strong>John Smith</strong>
-      <p style="margin: 0; color: #aaa;">Описание...</p>
-    </div>
-  </div>
-</div>
-
-<div class="profile-detail" id="profileDetail">
-  <div class="close-btn" onclick="closeProfile()">✕</div>
-  <img id="profileImage" src="">
-  <h2 id="profileName"></h2>
-  <p id="profileDesc"></p>
-  <button class="send-btn">Send Message</button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
