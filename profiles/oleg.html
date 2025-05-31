@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Марина</title>
+  <title>Олег</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Большая кнопка "Назад" */
+    .back-button-large {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      background: linear-gradient(to bottom, #8b0000, #000000);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid gray;
+      border-radius: 12px 0 12px 0;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button-large:hover {
+      background: linear-gradient(to bottom, #a80000, #1a1a1a);
+      transform: scale(1.05);
+    }
+  </style>
   <script>
     function filterProfiles(city) {
       window.location.href = `../index.html#${city}`;
@@ -29,14 +53,16 @@
 
   <main class="profile-detail">
     <div class="profile-left">
-      <a href="../index.html" class="back-button-small">← Назад</a>
+      <a href="../index.html" class="back-button-large">← Назад к списку</a>
       <img src="../assets/oleg.jpg" alt="Олег" class="profile-large-img"/>
     </div>
     <div class="profile-info">
       <h2>Олег, 55</h2>
-      <p><strong>Город:</strong> Мариупольк</p>
+      <p><strong>Город:</strong> Мариуполь</p>
       <p><strong>Telegram:</strong> @oleg</p>
-      <p class="profile-description">Это пример описания анкеты. Здесь можно рассказать больше о девушке: хобби, характер, пожелания к знакомству и т.д.</p>
+      <p class="profile-description">
+        Это пример описания анкеты. Здесь можно рассказать больше о мужчине: интересы, характер, пожелания к знакомству и т.д.
+      </p>
     </div>
   </main>
 </body>
