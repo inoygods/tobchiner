@@ -69,23 +69,41 @@ body {
   transform: scale(1.07);
 }
 
+/* ————— Стили профилей ————— */
+
 .profile-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-template-columns: 1fr; /* По умолчанию 1 колонка (для телефонов) */
   gap: 20px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   justify-items: center;
 }
 
+/* Для экранов >= 768px — 2 колонки */
+@media (min-width: 768px) {
+  .profile-list {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+/* Для экранов >= 1200px — 3 колонки */
+@media (min-width: 1200px) {
+  .profile-list {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+
 .profile-card {
   background: rgba(26, 26, 26, 0.9);
   border: 1px solid #333;
   padding: 15px;
-  width: 250px;
+  width: 100%; /* Занимает всю ширину колонки */
+  max-width: 350px; /* Максимальная ширина карточки */
   text-align: center;
   border-radius: 8px;
-  color: #fff; /* белый текст */
+  color: #fff;
+  box-sizing: border-box;
 }
 
 .profile-card img {
