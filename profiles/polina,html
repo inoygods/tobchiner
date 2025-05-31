@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Олег</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Большая кнопка "Назад" */
+    .back-button-large {
+      display: inline-block;
+      width: 100%;
+      max-width: 350px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      background: linear-gradient(to bottom, #8b0000, #000000);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid gray;
+      border-radius: 12px 0 12px 0;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button-large:hover {
+      background: linear-gradient(to bottom, #a80000, #1a1a1a);
+      transform: scale(1.05);
+    }
+  </style>
+  <script>
+    function filterProfiles(city) {
+      window.location.href = `../index.html#${city}`;
+      location.reload();
+    }
+  </script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-section">
+      <a href="../index.html"><img src="../assets/logo.png" class="logo" alt="Логотип" /></a>
+      <span class="site-title">Полина, 15</span>
+    </div>
+    <nav class="city-buttons">
+      <button onclick="filterProfiles('all')">Все</button>
+      <button onclick="filterProfiles('donetsk')">Донецк</button>
+      <button onclick="filterProfiles('lugansk')">Луганск</button>
+      <button onclick="filterProfiles('gorlovka')">Горловка</button>
+      <button onclick="filterProfiles('mariupol')">Мариуполь</button>
+    </nav>
+  </header>
+
+  <main class="profile-detail">
+    <div class="profile-left">
+      <a href="../index.html" class="back-button-large">← Назад к списку</a>
+      <img src="../assets/polina.jpg" alt="Полина" class="profile-large-img"/>
+    </div>
+    <div class="profile-info">
+      <h2>Олег, 15</h2>
+      <p><strong>Город:</strong> Горловка</p>
+      <p><strong>Telegram:</strong> @polina</p>
+      <p class="profile-description">
+        Это пример описания анкеты. Здесь можно рассказать больше о мужчине: интересы, характер, пожелания к знакомству и т.д.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
