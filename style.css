@@ -106,6 +106,17 @@ body {
   box-sizing: border-box;
 }
 
+/* Главное — ссылки внутри карточек делаем белыми */
+.profile-card a {
+  color: white;
+  text-decoration: none;
+  display: block; /* Чтобы вся карточка была кликабельной */
+}
+
+.profile-card a:hover {
+  text-decoration: underline;
+}
+
 .profile-card img {
   width: 100%;
   height: auto;
