@@ -1,9 +1,17 @@
 body {
   margin: 0;
-  background: url('assets/background.jpg') no-repeat center center fixed;
+  background: url('assets/background.jpg') no-repeat center center fixed; /* фон для телефонов */
   background-size: cover;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
+}
+
+/* Фон для ПК (ширина экрана 768px и выше) */
+@media (min-width: 768px) {
+  body {
+    background: url('assets/background-desktop.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
 }
 
 .main-header {
