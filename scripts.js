@@ -18,7 +18,7 @@ const profilesData = [
   },
   {
     name: "Олег",
-    city: "mariupol'",
+    city: "mariupol",
     age: 55,
     telegram: "@oleg",
     image: "assets/oleg.jpg",
