@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Марина</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function filterProfiles(city) {
+      window.location.href = `../index.html#${city}`;
+      location.reload();
+    }
+  </script>
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-section">
+      <a href="../index.html"><img src="../assets/logo.png" class="logo" alt="Логотип" /></a>
+      <span class="site-title">Олег, 55</span>
+    </div>
+    <nav class="city-buttons">
+      <button onclick="filterProfiles('all')">Все</button>
+      <button onclick="filterProfiles('donetsk')">Донецк</button>
+      <button onclick="filterProfiles('lugansk')">Луганск</button>
+      <button onclick="filterProfiles('gorlovka')">Горловка</button>
+      <button onclick="filterProfiles('mariupol')">Мариуполь</button>
+    </nav>
+  </header>
+
+  <main class="profile-detail">
+    <div class="profile-left">
+      <a href="../index.html" class="back-button-small">← Назад</a>
+      <img src="../assets/marina.jpg" alt="Олег" class="profile-large-img"/>
+    </div>
+    <div class="profile-info">
+      <h2>Олег, 55</h2>
+      <p><strong>Город:</strong> Мариупольк</p>
+      <p><strong>Telegram:</strong> @oleg</p>
+      <p class="profile-description">Это пример описания анкеты. Здесь можно рассказать больше о девушке: хобби, характер, пожелания к знакомству и т.д.</p>
+    </div>
+  </main>
+</body>
+</html>
