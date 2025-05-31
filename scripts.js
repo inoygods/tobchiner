@@ -23,6 +23,14 @@ const profilesData = [
     telegram: "@oleg",
     image: "assets/oleg.jpg",
     page: "oleg.html"
+  },
+  {
+    name: "Полина",
+    city: "gorlovka",
+    age: 15,
+    telegram: "@polina",
+    image: "assets/polina.jpg",
+    page: "polina.html"
   }
 ];
 
